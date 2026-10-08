@@ -1,11 +1,8 @@
 import React from "react";
-import Footer from "../components/Footer";
-import Nevbar from "../components/Navbar";
 
 export default function Home() {
   return (
     <>
-      <Nevbar />
       <section className="home">
         <div className="left">
           <h1>Food Recipe</h1>
@@ -50,7 +47,7 @@ export default function Home() {
           />
         </svg>
       </div>
-      <Footer />
+
     </>
   );
 }

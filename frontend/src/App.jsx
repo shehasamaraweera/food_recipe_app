@@ -2,12 +2,12 @@ import React from "react";
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home";
+import MainNavbar from "./components/MainNavbar";
 
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home />,
-  },
+  {path:"/", element:<MainNavbar/>,children:[
+  {path: "/", element: <Home />,},
+  ]}
 ]);
 
 export default function App() {
