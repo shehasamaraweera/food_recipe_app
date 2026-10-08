@@ -1,6 +1,11 @@
 import React from "react";
+import { useLoaderData } from "react-router-dom";
+import RecipeItems from "../components/RecipeItems";
 
 export default function Home() {
+    const allRecipes = useLoaderData();
+
+    console.log(allRecipes);
   return (
     <>
       <section className="home">
@@ -48,6 +53,9 @@ export default function Home() {
         </svg>
       </div>
 
+      <div className="recipe">
+        <RecipeItems />
+      </div>
     </>
   );
 }

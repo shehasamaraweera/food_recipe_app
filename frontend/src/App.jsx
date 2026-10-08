@@ -3,10 +3,16 @@ import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home";
 import MainNavbar from "./components/MainNavbar";
+import axios from "axios";
+
+const getAllRecipes = async () => {
+  const res = await axios.get("http://localhost:5000/recipe");
+  return res.data;
+};
 
 const router = createBrowserRouter([
   {path:"/", element:<MainNavbar/>,children:[
-  {path: "/", element: <Home />,},
+  {path: "/", element: <Home />,loader:getAllRecipes},
   ]}
 ]);
 
