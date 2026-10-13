@@ -1,8 +1,9 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import RecipeItems from "../components/RecipeItems";
 
 export default function Home() {
+  const navigate = useNavigate()
     const allRecipes = useLoaderData();
 
     console.log(allRecipes);
@@ -30,7 +31,7 @@ export default function Home() {
             community that enjoys cooking, learning, and trying something new.
           </h5>
 
-          <button>Share your Recipe</button>
+          <button onClick={()=>navigate("/addRecipe")}>Share your Recipe</button>
         </div>
 
         <div className="right">
